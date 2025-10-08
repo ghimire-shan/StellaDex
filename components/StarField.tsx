@@ -1,58 +1,77 @@
-import React, {useMemo, useRef} from 'react';
+import React, {useMemo, useRef, useEffect, useState} from 'react';
 import * as THREE from 'three';
+import hygJsonData from '../assets/hyg_visible.json';
+
+
+interface StarData{
+    x: number;
+    y: number;
+    z: number;
+    mag?: number;
+    proper_name?: string;
+}
 
 interface StarFieldProps{
-    starCount?: number;
     radius?: number;
 }
 
 const StarField: React.FC<StarFieldProps> = ({
-    starCount = 3000,
-    radius = 1000
+    radius = 2000
 }) => {
     const pointsRef = useRef<THREE.Points>(null);
+    const [hygData, setHygData] = useState<StarData[]>([]);
 
-    // Get some random points on the sphere
+    // Load the HYG data from the JSON file (inside assets)
+    useEffect(()=>{
+        const loadHygData = async () =>{
+            try{
+                const data = hygJsonData as StarData[];  
+                setHygData(data);
+            } catch (error){
+                console.log("Failed to load hyg data: ", error);
+            }
+        };
+        loadHygData();
+    }, []);
+
+    // Generate positions from the HYG data
     const positions = useMemo(()=>{
-        const positions = new Float32Array(starCount * 3);
-
-        for (let i=0; i < starCount; i++){
-            // Get random spherical coordinates for now
-            // We should change this to the astronomical coordinates later
-
-            // For now use 0 to 2pi for long and 0 to pi for lat
-            const phi = Math.random() * Math.PI * 2;
-            const theta = Math.acos(2 * Math.random() - 1); 
-
-            // Convert those to cartesian coordinates
-            const x = radius * Math.sin(theta) * Math.cos(phi);
-            const y = radius * Math.sin(theta) * Math.sin(phi);
-            const z = radius * Math.cos(theta);
-
-            positions[i *3] = x;
-            positions[i*3 + 1] = y;
-            positions[i*3 + 2] = z;
+        if (hygData.length === 0){
+            return new Float32Array(0);
         }
+        const positions = new Float32Array(hygData.length * 3);
+
+        hygData.forEach((star, i) =>{
+            /* We need to scale the HYG data into our scale/ sphere radius
+            Adjust the magic number 100 as needed
+            */
+            const scale = radius /100;
+            positions[i *3] = star.x * scale;
+            positions[i*3 + 1] = star.y * scale;
+            positions[i*3 + 2] = star.z * scale;
+        });
         return positions;
-    }, [starCount, radius]);
+    }, [hygData, radius]);
 
-return(
-    <points ref={pointsRef}>
-        <bufferGeometry>
-            <bufferAttribute
-                attach="attributes-position"
-                args={[positions, 3]}
+    // If no data is given, do not render anything
+    if (hygData.length ===0){
+        return null;
+    }
+    return(
+        <points ref={pointsRef}>
+            <bufferGeometry>
+                <bufferAttribute
+                    attach="attributes-position"
+                    args={[positions, 3]}
+                />
+            </bufferGeometry>
+            <pointsMaterial
+                color={"white"}
+                size={2}
+                // Keep size constant regardless of distance
+                sizeAttenuation={false}
             />
-        </bufferGeometry>
-        <pointsMaterial
-            color={"white"}
-            size={2}
-            // Keep size constant regardless of distance
-            sizeAttenuation={false}
-        />
-
-    </points>
-)
+        </points>
+    )
 }
-
 export default StarField;

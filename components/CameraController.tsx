@@ -23,9 +23,9 @@ const CameraController: React.FC<CameraControllerProps> = ({
         // Now apply rotation from the gestures
         perspectiveCamera.rotation.set(rotationX, rotationY, 0);
 
-        perspectiveCamera.fov = 75;
+        perspectiveCamera.fov = 30;
         perspectiveCamera.near = 0.1;
-        perspectiveCamera.far = 2000;
+        perspectiveCamera.far = 5000;
 
         perspectiveCamera.updateProjectionMatrix();
     }, [camera, rotationX, rotationY]);

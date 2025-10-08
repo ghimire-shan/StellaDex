@@ -1,0 +1,2 @@
+## About The Project
+StellaDex is a astronomy learning app that focuses on interactively learning astronomy. The current vision for StellaDex is that the user can "collect" constellations and learn that way.

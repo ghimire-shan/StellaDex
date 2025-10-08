@@ -17,12 +17,9 @@ const StarViewWithGestures = () =>{
     .activeOffsetX([-3, 3])
     .activeOffsetY([-3, 3])
     .onBegin((event) =>{
-        console.log("Pan gesture has started")
         lastTranslation.current = { x: event.translationX, y: event.translationY };
     })
-    .onUpdate((event) => {
-        console.log("Pan update:", event.translationX, event.translationY)
-        
+    .onUpdate((event) => {    
         // Calculate the delta (change in translation from the last translation)
        const deltaX = event.translationX - lastTranslation.current.x;
        const deltaY = event.translationY - lastTranslation.current.y;
@@ -50,7 +47,6 @@ const StarViewWithGestures = () =>{
         })
     })
     .onEnd(()=>{
-        console.log("Has finished")
         lastTranslation.current = { x:0, y:0 };
     });
 
@@ -61,11 +57,11 @@ const StarViewWithGestures = () =>{
                 {/* To give the black background */}
                 <color attach="background" args={['black']} />
                 {/* To attach the Star Field */}
-                <StarField starCount={500} radius={1000} />
+                <StarField radius={2000} />
 
                 {/* Adding a test cube */}
-                <mesh position = {[0,0,-100]}>
-                    <boxGeometry args={[20,20,40]} />
+                <mesh position = {[100,0,0]}>
+                    <boxGeometry args={[10,10,10]} />
                         <meshBasicMaterial color={"cyan"} />
                 </mesh>
                 <ambientLight intensity={1} />
