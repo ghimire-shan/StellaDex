@@ -4,6 +4,7 @@ import { Canvas } from "@react-three/fiber/native";
 import { Gesture, GestureDetector } from "react-native-gesture-handler";
 import StarField from "./StarField";
 import CameraController from "./CameraController";
+import CompassOverlay from "./CompassOverlay";
 
 const StarViewWithGestures = () =>{
     const [rotationX, setRotationX] = useState(0);
@@ -51,22 +52,26 @@ const StarViewWithGestures = () =>{
     });
 
     return (
-        <GestureDetector gesture={panGesture}>
-            <Canvas style={styles.canvas}>
-                <CameraController rotationX={rotationX} rotationY={rotationY} />
-                {/* To give the black background */}
-                <color attach="background" args={['black']} />
-                {/* To attach the Star Field */}
-                <StarField radius={2000} />
+        <>
+            <GestureDetector gesture={panGesture}>
+                <Canvas style={styles.canvas}>
+                    <CameraController rotationX={rotationX} rotationY={rotationY} />
+                    {/* To give the black background */}
+                    <color attach="background" args={['black']} />
+                    {/* To attach the Star Field */}
+                    <StarField radius={2000} />
 
-                {/* Adding a test cube */}
-                <mesh position = {[100,0,0]}>
-                    <boxGeometry args={[10,10,10]} />
-                        <meshBasicMaterial color={"cyan"} />
-                </mesh>
-                <ambientLight intensity={1} />
-            </Canvas>
-        </GestureDetector>
+                    {/* Adding a test cube */}
+                    <mesh position = {[100,0,0]}>
+                        <boxGeometry args={[10,10,10]} />
+                            <meshBasicMaterial color={"cyan"} />
+                    </mesh>
+                    <ambientLight intensity={1} />
+                </Canvas>
+            </GestureDetector>
+            <CompassOverlay  rotationY={rotationY} />
+        </>
+
     )
 };
 
