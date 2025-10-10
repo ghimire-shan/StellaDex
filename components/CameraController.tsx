@@ -3,7 +3,6 @@ import { useThree } from "@react-three/fiber";
 import { useEffect } from "react";
 import * as THREE from 'three';
 
-
 interface CameraControllerProps{
     rotationX?: number;
     rotationY?: number;

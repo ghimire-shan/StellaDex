@@ -12,8 +12,17 @@
       "resizeMode": "contain",
       "backgroundColor": "#ffffff"
     },
+    "plugins": [
+      [
+        "expo-location",
+        {"locationAlwaysAndWhenInUsePermission": "Allow $(PRODUCT_NAME) to use your location"}
+      ]
+    ],
     "ios": {
-      "supportsTablet": true
+      "supportsTablet": true,
+      "infoPlist": {
+        "NSLocationAlwaysAndWhenInUseUsageDescription": "This application needs your location to show you the correct star positions in your area."
+      }
     },
     "android": {
       "adaptiveIcon": {
@@ -22,7 +31,11 @@
       },
       "edgeToEdgeEnabled": true,
       "predictiveBackGestureEnabled": false,
-      "package": "com.anonymous.StellaDex"
+      "package": "com.anonymous.StellaDex",
+      "permissions": [
+        "ACCESS_COARSE_LOCATION",
+        "ACCESS_FINE_LOCATION"
+      ]
     },
     "web": {
       "favicon": "./assets/favicon.png"
