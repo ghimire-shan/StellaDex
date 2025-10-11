@@ -6,21 +6,31 @@ import StarField from "./StarField";
 import CameraController from "./CameraController";
 import CompassOverlay from "./CompassOverlay";
 import { useLocation } from "../hooks/useLocation";
+import { useInitialOrientation } from "../hooks/useInitialOrientation";
+import { center } from "@shopify/react-native-skia";
 
 const StarViewWithGestures = () =>{
     const [rotationX, setRotationX] = useState(0);
     const [rotationY, setRotationY] = useState(0);
     const lastTranslation = useRef({x:0, y:0});
     const {location, loading, error, permissionStatus} = useLocation();
+    const {initialRotationX, initialRotationY, status} = useInitialOrientation(location);
 
+    // Set initial orientation when calculated
     useEffect(()=>{
-        if (location){
+        if (location && status){
             console.log(location.latitude, location.longitude);
+            setRotationX(initialRotationX);
+            setRotationY(initialRotationY);
         }
-    }, [location]);
+    }, [status, initialRotationX, initialRotationY]);
 
     if (loading){
-        return <View><Text >Getting your location...</Text></View>;
+        return (
+            <View style={styles.loadingContainer}>
+                <Text style={styles.loadingText}>Getting your location..</Text>
+            </View>
+        )
     }
 
     if (error){
@@ -94,6 +104,16 @@ const StarViewWithGestures = () =>{
 const styles = StyleSheet.create({
     canvas: {
         flex: 1,
+    },
+    loadingContainer: {
+        flex: 1,
+        justifyContent: 'center',
+        alignItems: 'center',
+        backgroundColor: 'black',
+    },
+    loadingText: {
+        color: 'white',
+        fontSize: 16, 
     },
 });
 
