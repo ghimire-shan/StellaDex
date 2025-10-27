@@ -10,7 +10,6 @@
   },
   "dependencies": {
     "@react-three/fiber": "^9.3.0",
-    "@shopify/react-native-skia": "^2.2.18",
     "@types/three": "^0.180.0",
     "astronomy-engine": "^2.1.19",
     "expo": "~54.0.10",
