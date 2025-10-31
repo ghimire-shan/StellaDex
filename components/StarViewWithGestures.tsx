@@ -7,7 +7,7 @@ import CameraController from "./CameraController";
 import CompassOverlay from "./CompassOverlay";
 import { useLocation } from "../hooks/useLocation";
 import { useInitialOrientation } from "../hooks/useInitialOrientation";
-import { center } from "@shopify/react-native-skia";
+import ConstellationLines from "./ConstellationLines";
 
 const StarViewWithGestures = () =>{
     const [rotationX, setRotationX] = useState(0);
@@ -46,17 +46,17 @@ const StarViewWithGestures = () =>{
     .onBegin((event) =>{
         lastTranslation.current = { x: event.translationX, y: event.translationY };
     })
-    .onUpdate((event) => {    
+    .onUpdate((event) => {
         // Calculate the delta (change in translation from the last translation)
        const deltaX = event.translationX - lastTranslation.current.x;
        const deltaY = event.translationY - lastTranslation.current.y;
-       
+
        // Update the last position
        lastTranslation.current = {
            x: event.translationX,
            y: event.translationY
         }
-        
+
         const sensitivity = 0.004;
         setRotationY(prevY => {
             let newY = prevY + deltaX * sensitivity;
@@ -87,9 +87,12 @@ const StarViewWithGestures = () =>{
                     {/* To attach the Star Field */}
                     <StarField radius={2000} />
 
+                    {/*Add the Constellation Lines*/}
+                    <ConstellationLines radius={2000} color="#4488ff" />
+
                     {/* Adding a test cube */}
-                    <mesh position = {[100,0,0]}>
-                        <boxGeometry args={[20,10,10]} />
+                    <mesh position = {[1.3431 * 20, 1.047629 * 20, 132.614909 * 20]}>
+                        <boxGeometry args={[50,60,50]} />
                             <meshBasicMaterial color={"red"} />
                     </mesh>
                     <ambientLight intensity={1} />
@@ -113,7 +116,7 @@ const styles = StyleSheet.create({
     },
     loadingText: {
         color: 'white',
-        fontSize: 16, 
+        fontSize: 16,
     },
 });
 
