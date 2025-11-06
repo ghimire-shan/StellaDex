@@ -1,6 +1,7 @@
 import React, { useMemo, useRef, useEffect, useState } from "react";
 import * as THREE from "three";
 import constellation_lines from "../assets/constellation_lines.json";
+import { CELESTIAL_SPHERE_RADIUS, CELSTIAL_SPHERE_SCALE_FACTOR, CONSTELLATION_LINES_COLOR } from "../constants/celestial";
 
 interface Point3D {
     x: number;
@@ -23,8 +24,8 @@ interface ConstellationLineProps {
 }
 
 const ConstellationLines: React.FC<ConstellationLineProps> = ({
-    radius = 2000,
-    color = "#4488ff",
+    radius = CELESTIAL_SPHERE_RADIUS,
+    color = CONSTELLATION_LINES_COLOR,
 }) => {
     const lineRef = useRef<THREE.LineSegments>(null);
     const [constellationData, setConstellationData] =
@@ -71,17 +72,17 @@ const ConstellationLines: React.FC<ConstellationLineProps> = ({
             constellation.forEach((lineGroup) => {
                 lineGroup.forEach((segment) => {
                     // This scale has to remain consistent with StarField
-                    const scale = radius / 100;
+                    const scale = radius / CELSTIAL_SPHERE_SCALE_FACTOR;
 
                     // From point
                     positions[index++] = segment.from.x * scale;
                     positions[index++] = segment.from.y * scale;
-                    positions[index++] = segment.from.z * scale;
+                    positions[index++] = - segment.from.z * scale;
 
                     // To point
                     positions[index++] = segment.to.x * scale;
                     positions[index++] = segment.to.y * scale;
-                    positions[index++] = segment.to.z * scale;
+                    positions[index++] = - segment.to.z * scale;
                 });
             });
         });

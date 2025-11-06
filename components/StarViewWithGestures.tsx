@@ -8,6 +8,8 @@ import CompassOverlay from "./CompassOverlay";
 import { useLocation } from "../hooks/useLocation";
 import { useInitialOrientation } from "../hooks/useInitialOrientation";
 import ConstellationLines from "./ConstellationLines";
+import HorizontalPlane from "./HorizontalPlane";
+import { CELESTIAL_SPHERE_RADIUS, CONSTELLATION_LINES_COLOR, HORIZONTAL_PLANE_COLOR, HORIZONTAL_PLANE_OPACITY } from "../constants/celestial";
 
 const StarViewWithGestures = () =>{
     const [rotationX, setRotationX] = useState(0);
@@ -85,16 +87,24 @@ const StarViewWithGestures = () =>{
                     {/* To give the black background */}
                     <color attach="background" args={['black']} />
                     {/* To attach the Star Field */}
-                    <StarField radius={2000} />
+                    <StarField radius={CELESTIAL_SPHERE_RADIUS} />
 
                     {/*Add the Constellation Lines*/}
-                    <ConstellationLines radius={2000} color="#4488ff" />
+                    <ConstellationLines radius={CELESTIAL_SPHERE_RADIUS} color= {CONSTELLATION_LINES_COLOR} />
 
                     {/* Adding a test cube */}
                     <mesh position = {[1.3431 * 20, 1.047629 * 20, 132.614909 * 20]}>
                         <boxGeometry args={[50,60,50]} />
                             <meshBasicMaterial color={"red"} />
                     </mesh>
+
+                    {/* <HorizontalPlane
+                        latitude={location?.latitude || 0}
+                        radius={CELESTIAL_SPHERE_RADIUS}
+                        color={HORIZONTAL_PLANE_COLOR}
+                        opacity={HORIZONTAL_PLANE_OPACITY}
+                    /> */}
+
                     <ambientLight intensity={1} />
                 </Canvas>
             </GestureDetector>

@@ -1,6 +1,7 @@
 import React, {useMemo, useRef, useEffect, useState} from 'react';
 import * as THREE from 'three';
 import hygJsonData from '../assets/hyg_visible.json';
+import { CELESTIAL_SPHERE_RADIUS, CELSTIAL_SPHERE_SCALE_FACTOR } from '../constants/celestial';
 
 
 interface StarData{
@@ -16,7 +17,7 @@ interface StarFieldProps{
 }
 
 const StarField: React.FC<StarFieldProps> = ({
-    radius = 2000
+    radius = CELESTIAL_SPHERE_RADIUS
 }) => {
     const pointsRef = useRef<THREE.Points>(null);
     const [hygData, setHygData] = useState<StarData[]>([]);
@@ -45,10 +46,10 @@ const StarField: React.FC<StarFieldProps> = ({
             /* We need to scale the HYG data into our scale/ sphere radius
             Adjust the magic number 100 as needed
             */
-            const scale = radius /100;
+            const scale = radius / CELSTIAL_SPHERE_SCALE_FACTOR;
             positions[i *3] = star.x * scale;
             positions[i*3 + 1] = star.y * scale;
-            positions[i*3 + 2] = star.z * scale;
+            positions[i*3 + 2] = - star.z * scale;
         });
         return positions;
     }, [hygData, radius]);

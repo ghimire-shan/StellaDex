@@ -2,6 +2,7 @@ import React from "react";
 import { useThree } from "@react-three/fiber";
 import { useEffect } from "react";
 import * as THREE from 'three';
+import { CAMERA_FOV, CAMERA_FAR } from "../constants/celestial";
 
 interface CameraControllerProps{
     rotationX?: number;
@@ -21,11 +22,11 @@ const CameraController: React.FC<CameraControllerProps> = ({
 
         // Now apply rotation from the gestures
         // console.log('Setting camera rotation to:', rotationX, rotationY);
-        perspectiveCamera.rotation.set(rotationX, rotationY, 0, 'XYZ');
+        // perspectiveCamera.rotation.set(rotationX, rotationY, 0, 'XYZ');
 
-        perspectiveCamera.fov = 50;
+        perspectiveCamera.fov = CAMERA_FOV;
         perspectiveCamera.near = 0.1;
-        perspectiveCamera.far = 5000;
+        perspectiveCamera.far = CAMERA_FAR;
 
         perspectiveCamera.updateProjectionMatrix();
     }, [camera, rotationX, rotationY]);
