@@ -1,21 +1,23 @@
 import React, { useMemo, useRef, useEffect, useState } from "react";
 import * as THREE from "three";
 import constellation_lines from "../assets/constellation_lines.json";
-import { CELESTIAL_SPHERE_RADIUS, CELSTIAL_SPHERE_SCALE_FACTOR, CONSTELLATION_LINES_COLOR } from "../constants/celestial";
+import { 
+    CELESTIAL_SPHERE_RADIUS, 
+    CELSTIAL_SPHERE_SCALE_FACTOR, 
+    CONSTELLATION_LINES_COLOR, raDecToCartesian } from "../constants/celestial";
 
-interface Point3D {
-    x: number;
-    y: number;
-    z: number;
+interface StarPoint {
+    ra: number;
+    dec: number;
 }
 
-interface LineSegment {
-    from: Point3D;
-    to: Point3D;
+interface ConstellationLine {
+    from: StarPoint;
+    to: StarPoint;
 }
 
 interface ConstellationData {
-    [constellationAbbreviation: string]: LineSegment[][];
+    [constellationAbbreviation: string]: ConstellationLine[][];
 }
 
 interface ConstellationLineProps {
@@ -28,8 +30,7 @@ const ConstellationLines: React.FC<ConstellationLineProps> = ({
     color = CONSTELLATION_LINES_COLOR,
 }) => {
     const lineRef = useRef<THREE.LineSegments>(null);
-    const [constellationData, setConstellationData] =
-        useState<ConstellationData | null>(null);
+    const [constellationData, setConstellationData] = useState<ConstellationData | null>(null);
 
     // Load the constellation lines .json file
     useEffect(() => {
@@ -61,6 +62,11 @@ const ConstellationLines: React.FC<ConstellationLineProps> = ({
                 totalSegments += lineGroup.length;
             });
         });
+
+        if (totalSegments === 0){
+            console.warn('No constellation segements found');
+            return new Float32Array(0);
+        }
         console.log(`Processing ${totalSegments} line segments`);
 
         // Each segment needs 2 points (from , to) & each point has 3 coordinates (x, y, z)
@@ -68,21 +74,31 @@ const ConstellationLines: React.FC<ConstellationLineProps> = ({
         let index = 0;
 
         // Iterate through each constellation
-        Object.entries(constellationData).forEach(([name, constellation]) => {
+        Object.entries(constellationData).forEach(([abbr, constellation]) => {
             constellation.forEach((lineGroup) => {
                 lineGroup.forEach((segment) => {
-                    // This scale has to remain consistent with StarField
-                    const scale = radius / CELSTIAL_SPHERE_SCALE_FACTOR;
+                    // Convert from ra, dec to x,y , z
+                    const [fromX, fromY, fromZ] = raDecToCartesian(
+                        segment.from.ra,
+                        segment.from.dec,
+                        radius
+                    );
+
+                    const [toX, toY, toZ] = raDecToCartesian(
+                        segment.to.ra,
+                        segment.to.dec,
+                        radius
+                    );
 
                     // From point
-                    positions[index++] = segment.from.x * scale;
-                    positions[index++] = segment.from.y * scale;
-                    positions[index++] = - segment.from.z * scale;
+                    positions[index++] = fromX;
+                    positions[index++] = fromY;
+                    positions[index++] = fromZ;
 
                     // To point
-                    positions[index++] = segment.to.x * scale;
-                    positions[index++] = segment.to.y * scale;
-                    positions[index++] = - segment.to.z * scale;
+                    positions[index++] = toX;
+                    positions[index++] = toY;
+                    positions[index++] = toZ;
                 });
             });
         });

@@ -40,9 +40,15 @@ def create_bsc_lookup(hyg_data):
     for star in hyg_data:
         if star.get("hr"):
             bsc_lookup[int(star['hr'])] = {
-                'x': star['x'],
-                'y': star['y'],
-                'z': star['z'],
+                'ra': star['ra'],
+                'dec': star['dec'],
+                # 'z': star['z'],
+                # 'name': star.get('proper', 'unknown'),
+                # 'con': star.get('con', 'unknown'),
+                # 'ra': star['ra'],
+                # 'dec': star['dec'],
+                # 'rarad': star['rarad'],
+                # 'decrad': star['decrad']
                 # Can add more details here if needed and reconstruct the data
             }
     return bsc_lookup
@@ -65,8 +71,24 @@ def process_constellation_lines(constellation_data, bsc_lookup):
 
                 if star_from and star_to:
                     segment_lines.append({
-                        'from': {'x': star_from['x'], 'y': star_from['y'], 'z': star_from['z']},
-                        'to': {'x': star_to['x'], 'y': star_to['y'], 'z': star_to['z']},
+                        'from': {
+                            'ra': star_from['ra'], 
+                            'dec': star_from['dec'], 
+                            # Add more if needed for testing
+                            # 'name': star_from.get('name', 'unknown'),
+                            # 'con': star_from['con'],
+                            # 'rarad': star_from['rarad'],
+                            # 'decrad': star_from['decrad'],
+                            },
+                        'to': {
+                            'ra': star_to['ra'], 
+                            'dec': star_to['dec'], 
+                            # Add more if needed for testing
+                            # 'name': star_to.get('name', 'unknown'),
+                            # 'con': star_to['con'],
+                            # 'rarad': star_to['rarad'],
+                            # 'decrad': star_to['decrad'],
+                            },
                     })
             if segment_lines:
                 constellation_lines.append(segment_lines)
@@ -85,7 +107,7 @@ if __name__ == "__main__":
     bsc_lookup_table = create_bsc_lookup(hyg_data)
 
     final_constellations = process_constellation_lines(constellation_data= constellation_lines, bsc_lookup=bsc_lookup_table)
-
+    print(final_constellations.get('Ori'))
     with open(CONSTELLATION_LINES_SAVE_PATH, 'w') as file:
         json.dump(final_constellations, file, indent = 4)
     print("Saved constellation file to disk! :)")

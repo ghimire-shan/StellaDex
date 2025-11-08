@@ -1,13 +1,12 @@
 import React, {useMemo, useRef, useEffect, useState} from 'react';
 import * as THREE from 'three';
 import hygJsonData from '../assets/hyg_visible.json';
-import { CELESTIAL_SPHERE_RADIUS, CELSTIAL_SPHERE_SCALE_FACTOR } from '../constants/celestial';
+import { CELESTIAL_SPHERE_RADIUS, raDecToCartesian } from '../constants/celestial';
 
 
 interface StarData{
-    x: number;
-    y: number;
-    z: number;
+    ra: number;
+    dec: number;
     mag?: number;
     proper_name?: string;
 }
@@ -43,13 +42,19 @@ const StarField: React.FC<StarFieldProps> = ({
         const positions = new Float32Array(hygData.length * 3);
 
         hygData.forEach((star, i) =>{
-            /* We need to scale the HYG data into our scale/ sphere radius
-            Adjust the magic number 100 as needed
+            /*
+                We take the RA and dec and do the conversions
+                1. Convert RA from hours to radians (RA 0-24 hours to 0-2pi radians)
+                2. Convert Dec from degrees to radians
+                3. Calculate the x, y, z (Standard convention)
+                    x = r cos(ra) cos (dec)
+                    z = - r sin(ra) cos(dec)
+                    y = r sin(dec)
             */
-            const scale = radius / CELSTIAL_SPHERE_SCALE_FACTOR;
-            positions[i *3] = star.x * scale;
-            positions[i*3 + 1] = star.y * scale;
-            positions[i*3 + 2] = - star.z * scale;
+            const [x, y, z] = raDecToCartesian(star.ra, star.dec, radius);
+            positions[i*3] = x;
+            positions[i*3 + 1] = y;
+            positions[i*3 + 2] = z; 
         });
         return positions;
     }, [hygData, radius]);

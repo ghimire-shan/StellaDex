@@ -10,3 +10,15 @@ export const CAMERA_FAR = CELESTIAL_SPHERE_RADIUS * 2.5;
 export const CONSTELLATION_LINES_COLOR = "#4488ff";
 export const HORIZONTAL_PLANE_COLOR = "#1a237e";
 export const HORIZONTAL_PLANE_OPACITY = 0.15;
+
+// Functions that are needeed
+export function raDecToCartesian(ra: number, dec: number, radius: number): [number, number, number]{
+    const raRad = (ra * Math.PI) / 12; 
+    const decRad = (dec * Math.PI) / 180; 
+
+    const x = radius * Math.cos(raRad) * Math.cos(decRad);
+    const y = radius * Math.sin(decRad);
+    const z = - radius * Math.sin(raRad) * Math.cos(decRad);
+
+    return [x,y,z]
+}
