@@ -56,12 +56,14 @@ export const useInitialOrientation = (
                 Orients us to face North
             */
            const latitudeRadians = location.latitude * Astronmy.DEG2RAD;
-           // vert rotation is 90 - latitude
-           const verticalRotation = (90 * Astronmy.DEG2RAD) - latitudeRadians; 
+           // Look 45 degrees above the horizon to start
+           const verticalRotation = (45 * Astronmy.DEG2RAD); 
            
            // there are 15 degrees per sidereal hour
            const lstDegrees = lst * 15
-           const horizontalRotation = lstDegrees * Astronmy.DEG2RAD;
+            // Start facing north for intuitive navigation
+            console.log("LST", lstDegrees)
+           const horizontalRotation = lstDegrees  * Astronmy.DEG2RAD ;
 
            console.log('Calculated rotaions', {
             vertcal: verticalRotation,

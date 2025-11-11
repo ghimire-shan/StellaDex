@@ -5,13 +5,11 @@ import * as THREE from 'three';
 import { CAMERA_FOV, CAMERA_FAR } from "../constants/celestial";
 
 interface CameraControllerProps{
-    rotationX?: number;
-    rotationY?: number;
+    quaternion: THREE.Quaternion; 
 }
 
 const CameraController: React.FC<CameraControllerProps> = ({
-    rotationX = 0,
-    rotationY = 0
+    quaternion
 }) => {
     const {camera} = useThree();
 
@@ -33,9 +31,10 @@ const CameraController: React.FC<CameraControllerProps> = ({
     useEffect(() => {
         const perspectiveCamera = camera as THREE.PerspectiveCamera;
 
-        // Apply rotation: X for vertical (pitch), Y for horizontal (yaw)
-        perspectiveCamera.rotation.set(rotationX, rotationY, 0, 'XYZ');
-    }, [camera, rotationX, rotationY]);
+        // Apply the quaternion directly to the camera rotation
+        perspectiveCamera.quaternion.copy(quaternion);
+        
+    }, [camera, quaternion]);
     return null;
 }
 

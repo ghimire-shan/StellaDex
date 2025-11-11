@@ -8,7 +8,7 @@ export const CAMERA_FAR = CELESTIAL_SPHERE_RADIUS * 2.5;
 
 // Colors
 export const CONSTELLATION_LINES_COLOR = "#4488ff";
-export const HORIZONTAL_PLANE_COLOR = "#1a237e";
+export const HORIZONTAL_PLANE_COLOR = "red";
 export const HORIZONTAL_PLANE_OPACITY = 0.15;
 
 // Functions that are needeed
