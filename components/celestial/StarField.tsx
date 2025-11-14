@@ -1,7 +1,7 @@
 import React, {useMemo, useRef, useEffect, useState} from 'react';
 import * as THREE from 'three';
-import hygJsonData from '../assets/hyg_visible.json';
-import { CELESTIAL_SPHERE_RADIUS, raDecToCartesian } from '../constants/celestial';
+import hygJsonData from '../../assets/hyg_visible.json';
+import { CELESTIAL_SPHERE_RADIUS, raDecToCartesian } from '../../constants/celestial';
 
 
 interface StarData{

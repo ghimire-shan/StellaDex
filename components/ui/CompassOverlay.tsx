@@ -1,13 +1,17 @@
 import React from "react";
 import { View, Text, StyleSheet } from 'react-native';
+import * as THREE from 'three';
 
 interface CompassOverlayProps {
-    rotationY: number;
+    quaternion: THREE.Quaternion;
 }
 
-const CompassOverlay: React.FC<CompassOverlayProps> = ({rotationY}) => {
+const CompassOverlay: React.FC<CompassOverlayProps> = ({quaternion}) => {
     // Convert radians to degrees and invert (compass rotates opposite to the camera)
-    const rotationDegrees = (-rotationY * (180/ Math.PI));
+    const euler = new THREE.Euler().setFromQuaternion(quaternion, 'YXZ');
+    const rotationY = euler.y; 
+
+    const rotationDegrees = -(rotationY * (180 / Math.PI));
 
   return (
     <View style={styles.container}>

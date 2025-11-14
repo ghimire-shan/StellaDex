@@ -1,10 +1,10 @@
 import React, { useMemo, useRef, useEffect, useState } from "react";
 import * as THREE from "three";
-import constellation_lines from "../assets/constellation_lines.json";
+import constellation_lines from "../../assets/constellation_lines.json";
 import { 
     CELESTIAL_SPHERE_RADIUS, 
     CELSTIAL_SPHERE_SCALE_FACTOR, 
-    CONSTELLATION_LINES_COLOR, raDecToCartesian } from "../constants/celestial";
+    CONSTELLATION_LINES_COLOR, raDecToCartesian } from "../../constants/celestial";
 
 interface StarPoint {
     ra: number;

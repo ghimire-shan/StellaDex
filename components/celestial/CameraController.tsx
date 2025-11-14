@@ -2,7 +2,7 @@ import React, { useReducer } from "react";
 import { useThree } from "@react-three/fiber";
 import { useEffect } from "react";
 import * as THREE from 'three';
-import { CAMERA_FOV, CAMERA_FAR } from "../constants/celestial";
+import { CAMERA_FOV, CAMERA_FAR } from "../../constants/celestial";
 
 interface CameraControllerProps{
     quaternion: THREE.Quaternion; 

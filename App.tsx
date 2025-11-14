@@ -1,7 +1,7 @@
 import React from 'react';
 import { View, StyleSheet } from 'react-native';
 import { GestureHandlerRootView } from 'react-native-gesture-handler';
-import StarViewWithGestures from './components/StarViewWithGestures';
+import StarViewWithGestures from './screens/StarViewWithGestures';
 
 export default function App() {
   return (

@@ -10,6 +10,7 @@ interface UseIntiailOrientationReturn {
     initialRotationX: number,
     initialRotationY: number,
     status: boolean,
+    lst: number,
     // loading: boolean,
     // error: string | null;
 }
@@ -22,6 +23,7 @@ export const useInitialOrientation = (
     const [loading, setLoading] = useState<boolean>(true);
     const [error, setError] = useState<string | null>(null);
     const [status, setStatus] = useState<boolean>(false);
+    const [lst, setLst] = useState<number>(0);
 
     useEffect(()=>{
         if (!location){
@@ -37,55 +39,78 @@ export const useInitialOrientation = (
             console.log('current time, ', now);
 
             const astronomyTime = Astronmy.MakeTime(now);
-            // Calculate the local sidereal time
-            const lst = Astronmy.SiderealTime(astronomyTime);
-            console.log("The lst is: ", lst);
 
-            // Make a Astronomy Observer object with 0 height
-            const observer = new Astronmy.Observer(
-                location.latitude,
-                location.longitude,
-                0
-            )
+            // Astronomy engine returns the Sidereal time in GAST, need to convert it to local
+            const gast = Astronmy.SiderealTime(astronomyTime);
+            
+            // Convert to local Sidereal time, lontitude in degrees / 15 = hours of time diff
+            const longitudeHours = location.longitude / 15; 
+            let lst = gast + longitudeHours; 
 
-            /* Now convert location + LST => camera orientation
-            Naive/ Simple approach of 
-                X-rotation (vertical): Based on latitude
-                Looking at horizon from your latitude
-                Y-rotaion (horizontal): Based on LST & longitude. LST is in sidereal hours, convert to radians
-                Orients us to face North
+            // Add wrap around to 24 hours
+            if (lst < 0) lst += 24;
+            if (lst >= 24) lst -= 24; 
+            console.log('Time calculation:', {
+                localTime: now.toLocaleString(),
+                gast: gast.toFixed(2),
+                longitude: location.longitude,
+                longitudeHours: longitudeHours.toFixed(2),
+                lst: lst.toFixed(2)
+            });
+            console.log('Date info:', {
+                local: now.toString(),
+                utc: now.toUTCString(),
+                timezone: now.getTimezoneOffset() / 60
+            });
+
+
+            /* Initial View Setup
+            * We want to start looking North at a comfortable angle
+            * Horizontal (Y rotation - azimuth)
+            * - North - 0 azimuth & set Y rotation to point camera North
+            * Vertical (X rotation - altitude)
+            * - Look up at angle equal to latitude 
             */
-           const latitudeRadians = location.latitude * Astronmy.DEG2RAD;
-           // Look 45 degrees above the horizon to start
-           const verticalRotation = (45 * Astronmy.DEG2RAD); 
-           
-           // there are 15 degrees per sidereal hour
-           const lstDegrees = lst * 15
-            // Start facing north for intuitive navigation
-            console.log("LST", lstDegrees)
-           const horizontalRotation = lstDegrees  * Astronmy.DEG2RAD ;
+            // const latitudeRadians = location.latitude * Astronmy.DEG2RAD;
+            // Look up at an angle equal to latitude 
+            // const verticalRotation = latitudeRadians;
+            const verticalRotation = 45 * Astronmy.DEG2RAD; 
 
-           console.log('Calculated rotaions', {
-            vertcal: verticalRotation,
-            horizontal: horizontalRotation
-           });
+            // Convert hours to radians
+            // LST tells us what RA is on the meridian
+            const lstRadians = (lst * 15) * Astronmy.DEG2RAD; 
+            // Start facing north which is RA that's 180 degrees away (12 hours)
+            // const horizontalRotation = lstRadians + Math.PI ;
+            const horizontalRotation = 0;
 
-           setInitialRotationX(verticalRotation);
-           setInitialRotationY(horizontalRotation);
-           setLoading(false);
-           setStatus(true);
+            console.log('Calculations', {
+                vertcal: verticalRotation,
+                horizontal: horizontalRotation,
+                lst: lst,
+            });
+
+            setInitialRotationX(verticalRotation);
+            setInitialRotationY(horizontalRotation);
+            setLst(lst);
+            setLoading(false);
+            setStatus(true);
         } catch (error) {
             console.log("Error while calculating the orientation: ", error);
+            // Use default orientation on failure
+            setInitialRotationX(0);
+            setInitialRotationY(0);
+            setLst(0);
             setError('Failed to calculate sky orientations. Using default view.');
             setLoading(false);
         }
     }, [location]);
-    
-return{
-    initialRotationX, 
-    initialRotationY,
-    status,
-    // loading,
-    // error  
-};
+
+    return{
+        initialRotationX, 
+        initialRotationY,
+        status,
+        lst, 
+        // loading,
+        // error  
+    };
 };
