@@ -19,7 +19,6 @@ import GestureManager from "../components/interaction/GestureManager";
 
 const StarViewWithGestures = () =>{
     const [cameraQuaternion, setCameraQuaternion] = useState(new THREE.Quaternion());
-    const [sphereQuaternion, setSphereQuaternion] = useState(new THREE.Quaternion());
     const {location, loading, error, permissionStatus} = useLocation();
     const {initialRotationX, initialRotationY, lst, status} = useInitialOrientation(location);
 
@@ -57,7 +56,6 @@ const StarViewWithGestures = () =>{
             <GestureManager
                 onCameraUpdate={handleCameraUpdate}
                 initialQuaternion={cameraQuaternion}
-                sphereRotation={sphereQuaternion}
             >
                 <Canvas style={styles.canvas}>
                     <CameraController quaternion={cameraQuaternion} />
@@ -67,7 +65,6 @@ const StarViewWithGestures = () =>{
                         latitude={location?.latitude || 0}
                         lst={lst}
                         radius={CELESTIAL_SPHERE_RADIUS} 
-                        onRotationCalculated={setSphereQuaternion}
                     />
 
                     <HorizontalPlane

@@ -6,7 +6,6 @@ interface GestureManagerProps {
     children: React.ReactNode;
     onCameraUpdate: (quaternion: THREE.Quaternion) => void;
     initialQuaternion: THREE.Quaternion;
-    sphereRotation: THREE.Quaternion; 
 }
 
 function calculateRotation(
@@ -43,7 +42,6 @@ const GestureManager: React.FC<GestureManagerProps> = ({
     children,
     onCameraUpdate,
     initialQuaternion,
-    sphereRotation
 }) => {
     const lastTranslation = useRef({x:0, y:0});
     const cameraQuaternion = useRef(initialQuaternion.clone());

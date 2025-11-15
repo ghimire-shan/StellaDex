@@ -36,8 +36,6 @@ export const useInitialOrientation = (
             
             // Get the date and time
             const now = new Date();
-            console.log('current time, ', now);
-
             const astronomyTime = Astronmy.MakeTime(now);
 
             // Astronomy engine returns the Sidereal time in GAST, need to convert it to local
@@ -50,18 +48,6 @@ export const useInitialOrientation = (
             // Add wrap around to 24 hours
             if (lst < 0) lst += 24;
             if (lst >= 24) lst -= 24; 
-            console.log('Time calculation:', {
-                localTime: now.toLocaleString(),
-                gast: gast.toFixed(2),
-                longitude: location.longitude,
-                longitudeHours: longitudeHours.toFixed(2),
-                lst: lst.toFixed(2)
-            });
-            console.log('Date info:', {
-                local: now.toString(),
-                utc: now.toUTCString(),
-                timezone: now.getTimezoneOffset() / 60
-            });
 
 
             /* Initial View Setup
@@ -71,23 +57,13 @@ export const useInitialOrientation = (
             * Vertical (X rotation - altitude)
             * - Look up at angle equal to latitude 
             */
-            // const latitudeRadians = location.latitude * Astronmy.DEG2RAD;
-            // Look up at an angle equal to latitude 
-            // const verticalRotation = latitudeRadians;
             const verticalRotation = 45 * Astronmy.DEG2RAD; 
 
             // Convert hours to radians
             // LST tells us what RA is on the meridian
             const lstRadians = (lst * 15) * Astronmy.DEG2RAD; 
             // Start facing north which is RA that's 180 degrees away (12 hours)
-            // const horizontalRotation = lstRadians + Math.PI ;
             const horizontalRotation = 0;
-
-            console.log('Calculations', {
-                vertcal: verticalRotation,
-                horizontal: horizontalRotation,
-                lst: lst,
-            });
 
             setInitialRotationX(verticalRotation);
             setInitialRotationY(horizontalRotation);

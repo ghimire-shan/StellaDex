@@ -1,15 +1,13 @@
-import React, { useEffect, useMemo } from 'react';
+import React, { useEffect, useMemo, useRef } from 'react';
 import * as THREE from 'three';
 import StarField from './StarField';
 import ConstellationLines from './ConstellationLines';
-import * as Astronmy from 'astronomy-engine';
 import { CELESTIAL_SPHERE_RADIUS, CONSTELLATION_LINES_COLOR, raDecToCartesian} from '../../constants/celestial';
 
 interface CelestialSphereProps {
     latitude: number;
     lst: number;
     radius?: number;
-    onRotationCalculated?: (quaternion: THREE.Quaternion) => void; 
 }
 
 /*
@@ -21,7 +19,6 @@ const CelestialSphere: React.FC<CelestialSphereProps> = ({
     latitude,
     lst,
     radius = CELESTIAL_SPHERE_RADIUS,
-    onRotationCalculated
 }) => {
     const sphereRotation = useMemo(()=>{
         /**
@@ -31,7 +28,6 @@ const CelestialSphere: React.FC<CelestialSphereProps> = ({
          *  - Convert lst to radians to align RA with local time
          * Step 2. Rotate around X axis by (90 - lat)
          *  - tilt the celestial equator to match local horizon
-         * 
          */
         const latRad = (latitude * Math.PI) / 180; 
         const lstRad = (lst * 15 * Math.PI) / 180; 
@@ -39,32 +35,32 @@ const CelestialSphere: React.FC<CelestialSphereProps> = ({
         // Create individual rotation quaternions
         const latQuat = new THREE.Quaternion().setFromAxisAngle(
             new THREE.Vector3(1, 0, 0),
-            - (Math.PI/ 2 - latRad)
+            (Math.PI/ 2 - latRad)
         );
         const lstQuat = new THREE.Quaternion().setFromAxisAngle(
             new THREE.Vector3(0, 1, 0),
-            - lstRad
+            lstRad
         );
-
-
+        
+        // Combine the rotation quaternions with lst 1st and then lat
         const combined = new THREE.Quaternion().multiplyQuaternions(lstQuat, latQuat);
-        return combined; 
+        return combined
     }, [latitude, lst]);
 
-    useEffect(() => {
-        if (onRotationCalculated){
-            onRotationCalculated(sphereRotation);
-        }
-    }, [sphereRotation, onRotationCalculated])
+    /* Creating a reference to the sphere rotation. This is done as passing 
+    * quaternion to group property breaks on Expo Go.
+    * Theoretically the spherical rotation is only done once as lat and lst rarely changes.
+    */
+    const groupRef = useRef<THREE.Group>(null);
 
-    console.log('Celestial Sphere rotation', {
-        latitude, 
-        lst: `${lst.toFixed(2)} hr`,
-    })
-    
+    useEffect(() => {
+        if (groupRef.current) {
+            groupRef.current.quaternion.copy(sphereRotation);
+        }
+    }, [sphereRotation]);
 
     return (
-        <group quaternion={sphereRotation}>
+        <group ref={groupRef}>
             <StarField radius={radius} />
             <ConstellationLines 
                 radius={CELESTIAL_SPHERE_RADIUS} 
@@ -75,7 +71,7 @@ const CelestialSphere: React.FC<CelestialSphereProps> = ({
                     */}
                     <mesh position={raDecToCartesian(2.52975, 89.264109, CELESTIAL_SPHERE_RADIUS)}>
                         <boxGeometry args={[30, 30, 30]} />
-                            <meshBasicMaterial color={"red"} />
+                                <meshBasicMaterial color={"red"} />
                     </mesh>
                     <mesh position={raDecToCartesian(5.919529, 7.407063, CELESTIAL_SPHERE_RADIUS)}>
                         <boxGeometry args={[30, 30, 30]} />
