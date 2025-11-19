@@ -28,7 +28,7 @@ const HorizontalPlane: React.FC<HorizontalPlaneProps> = ({
     return(
         <mesh 
             rotation={planeRotation}
-            position={[0,-10,0]}
+            position={[0,-5,0]}
         >
             <planeGeometry args={[planeSize, planeSize]} />
             <meshBasicMaterial

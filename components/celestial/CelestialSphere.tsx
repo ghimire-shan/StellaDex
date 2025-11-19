@@ -21,29 +21,37 @@ const CelestialSphere: React.FC<CelestialSphereProps> = ({
     radius = CELESTIAL_SPHERE_RADIUS,
 }) => {
     const sphereRotation = useMemo(()=>{
-        /**
-         * Transform celestial coordinates to local horizon coordinates
-         * Step 1. Rotate around Y axis by LST
-         *  - LST tells us what RA is crossing the Meridian 
-         *  - Convert lst to radians to align RA with local time
-         * Step 2. Rotate around X axis by (90 - lat)
-         *  - tilt the celestial equator to match local horizon
-         */
+        // Convert them to radians
         const latRad = (latitude * Math.PI) / 180; 
         const lstRad = (lst * 15 * Math.PI) / 180; 
 
         // Create individual rotation quaternions
+        /* - 1. Latitude Tilt -
+        * We rotate around the X-axis (East West line)
+        * To move the Celestial Pole (Y+) down to the North Horizon (Z-), need to 
+        * NEGATIVE rotation of (90 - Latitude)
+        */
+        const tiltAngle = (Math.PI/ 2) - latRad; 
         const latQuat = new THREE.Quaternion().setFromAxisAngle(
             new THREE.Vector3(1, 0, 0),
-            (Math.PI/ 2 - latRad)
+            - tiltAngle
         );
+
+        /*
+        * - 2. LST Spin (Earth Rotation) - 
+        * With the Z flip in Step 1, RA is 0 at +X (East)
+        * We want the RA that matches the current LST to be at the Meridian (+Z / South)
+        * Phase offset of -90 degrees (-PI/2) moves +X to +Z when RA is 0hr.
+        */
+        const phaseOffset = - Math.PI / 2;
         const lstQuat = new THREE.Quaternion().setFromAxisAngle(
             new THREE.Vector3(0, 1, 0),
-            lstRad
+            phaseOffset - lstRad
         );
         
-        // Combine the rotation quaternions with lst 1st and then lat
-        const combined = new THREE.Quaternion().multiplyQuaternions(lstQuat, latQuat);
+        // Combine the rotation quaternions with Spin (LST) first and Tilt (Latitude)
+        const combined = new THREE.Quaternion();
+        combined.multiplyQuaternions(latQuat, lstQuat)
         return combined
     }, [latitude, lst]);
 
