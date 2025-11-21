@@ -1,0 +1,1180 @@
+{
+    "And": {
+        "nominative_name": "Andromeda",
+        "genitive_name": "Andromedae",
+        "english_name": "the Chained Maiden",
+        "center_ra": 0.8151499504533193,
+        "center_dec": 36.907597759044,
+        "bright_stars": [
+            "Mirach",
+            "Alpheratz"
+        ],
+        "hemisphere": "northern",
+        "alwaysVisible": []
+    },
+    "Ant": {
+        "nominative_name": "Antlia",
+        "genitive_name": "Antliae",
+        "english_name": "the Air Pump",
+        "center_ra": 10.18065182161604,
+        "center_dec": -33.07440917906713,
+        "bright_stars": [
+            null,
+            null
+        ],
+        "hemisphere": "southern",
+        "alwaysVisible": []
+    },
+    "Aps": {
+        "nominative_name": "Apus",
+        "genitive_name": "Apodis",
+        "english_name": "the Bird of Paradise",
+        "center_ra": 16.00218090826654,
+        "center_dec": -78.60916587559662,
+        "bright_stars": [
+            "Paradys",
+            null
+        ],
+        "hemisphere": "southern",
+        "alwaysVisible": [
+            "southern_60"
+        ]
+    },
+    "Aqr": {
+        "nominative_name": "Aquarius",
+        "genitive_name": "Aquarii",
+        "english_name": "the Water Bearer",
+        "center_ra": 22.44049748233812,
+        "center_dec": -7.611006148463249,
+        "bright_stars": [
+            "Sadalsuud",
+            "Sadalmelik"
+        ],
+        "hemisphere": "both",
+        "alwaysVisible": []
+    },
+    "Aql": {
+        "nominative_name": "Aquila",
+        "genitive_name": "Aquilae",
+        "english_name": "the Eagle",
+        "center_ra": 19.726095147663106,
+        "center_dec": 7.092864656685749,
+        "bright_stars": [
+            "Altair",
+            "Tarazed"
+        ],
+        "hemisphere": "both",
+        "alwaysVisible": []
+    },
+    "Ara": {
+        "nominative_name": "Ara",
+        "genitive_name": "Arae",
+        "english_name": "the Altar",
+        "center_ra": 17.373001967472376,
+        "center_dec": -54.74279529677173,
+        "bright_stars": [
+            null,
+            null
+        ],
+        "hemisphere": "southern",
+        "alwaysVisible": []
+    },
+    "Ari": {
+        "nominative_name": "Aries",
+        "genitive_name": "Arietis",
+        "english_name": "the Ram",
+        "center_ra": 2.12212357480259,
+        "center_dec": 22.770967921771728,
+        "bright_stars": [
+            "Hamal",
+            "Sheratan"
+        ],
+        "hemisphere": "both",
+        "alwaysVisible": []
+    },
+    "Aur": {
+        "nominative_name": "Auriga",
+        "genitive_name": "Aurigae",
+        "english_name": "the Charioteer",
+        "center_ra": 5.376519314384966,
+        "center_dec": 42.10835836121469,
+        "bright_stars": [
+            "Capella",
+            "Elnath"
+        ],
+        "hemisphere": "northern",
+        "alwaysVisible": []
+    },
+    "Boo": {
+        "nominative_name": "Bootes",
+        "genitive_name": "Bootis",
+        "english_name": "the Herdsman",
+        "center_ra": 14.340175681521215,
+        "center_dec": 22.974418458662207,
+        "bright_stars": [
+            "Arcturus",
+            "Seginus"
+        ],
+        "hemisphere": "both",
+        "alwaysVisible": []
+    },
+    "Cae": {
+        "nominative_name": "Caelum",
+        "genitive_name": "Caeli",
+        "english_name": "the Engraving Tool",
+        "center_ra": 4.64025998523065,
+        "center_dec": -41.401914834030926,
+        "bright_stars": [
+            null,
+            null
+        ],
+        "hemisphere": "southern",
+        "alwaysVisible": []
+    },
+    "Cam": {
+        "nominative_name": "Camelopardalis",
+        "genitive_name": "Camelopardalis",
+        "english_name": "the Giraffe",
+        "center_ra": 4.279657501066741,
+        "center_dec": 62.127576128569615,
+        "bright_stars": [
+            null,
+            null
+        ],
+        "hemisphere": "northern",
+        "alwaysVisible": [
+            "northern_60"
+        ]
+    },
+    "Cnc": {
+        "nominative_name": "Cancer",
+        "genitive_name": "Cancri",
+        "english_name": "the Crab",
+        "center_ra": 8.638199183343481,
+        "center_dec": 16.7955539565765,
+        "bright_stars": [
+            "Tarf",
+            "Asellus Australis"
+        ],
+        "hemisphere": "both",
+        "alwaysVisible": []
+    },
+    "CVn": {
+        "nominative_name": "Canes Venatici",
+        "genitive_name": "Canum Venaticorum",
+        "english_name": "the Hunting Dogs",
+        "center_ra": 12.85072788690639,
+        "center_dec": 38.99866863007865,
+        "bright_stars": [
+            "Cor Caroli",
+            "Chara"
+        ],
+        "hemisphere": "northern",
+        "alwaysVisible": []
+    },
+    "CMa": {
+        "nominative_name": "Canis Major",
+        "genitive_name": "Canis Majoris",
+        "english_name": "the Great Dog",
+        "center_ra": 6.790727817052635,
+        "center_dec": -18.300075864009067,
+        "bright_stars": [
+            "Sirius",
+            "Adhara"
+        ],
+        "hemisphere": "both",
+        "alwaysVisible": []
+    },
+    "CMi": {
+        "nominative_name": "Canis Minor",
+        "genitive_name": "Canis Minoris",
+        "english_name": "the Lesser Dog",
+        "center_ra": 7.636473714440193,
+        "center_dec": 5.505909048924589,
+        "bright_stars": [
+            "Procyon",
+            "Gomeisa"
+        ],
+        "hemisphere": "both",
+        "alwaysVisible": []
+    },
+    "Cap": {
+        "nominative_name": "Capricornus",
+        "genitive_name": "Capricorni",
+        "english_name": "the Sea Goat",
+        "center_ra": 21.09116768042582,
+        "center_dec": -17.636253135118974,
+        "bright_stars": [
+            "Deneb Algedi",
+            "Dabih"
+        ],
+        "hemisphere": "both",
+        "alwaysVisible": []
+    },
+    "Car": {
+        "nominative_name": "Carina",
+        "genitive_name": "Carinae",
+        "english_name": "the Keel",
+        "center_ra": 7.321343822263358,
+        "center_dec": -56.176510106450934,
+        "bright_stars": [
+            "Canopus",
+            "Miaplacidus"
+        ],
+        "hemisphere": "southern",
+        "alwaysVisible": []
+    },
+    "Cas": {
+        "nominative_name": "Cassiopeia",
+        "genitive_name": "Cassiopeiae",
+        "english_name": "the Seated Queen",
+        "center_ra": 0.8569638436739407,
+        "center_dec": 59.5052025383676,
+        "bright_stars": [
+            "Cih",
+            "Schedar"
+        ],
+        "hemisphere": "northern",
+        "alwaysVisible": []
+    },
+    "Cen": {
+        "nominative_name": "Centaurus",
+        "genitive_name": "Centauri",
+        "english_name": "the Centaur",
+        "center_ra": 14.008399181250352,
+        "center_dec": -54.668663964213714,
+        "bright_stars": [
+            "Rigil Kentaurus",
+            "Hadar"
+        ],
+        "hemisphere": "southern",
+        "alwaysVisible": []
+    },
+    "Cep": {
+        "nominative_name": "Cepheus",
+        "genitive_name": "Cephei",
+        "english_name": "the King",
+        "center_ra": 22.090317203218472,
+        "center_dec": 66.49572297978419,
+        "bright_stars": [
+            "Alderamin",
+            "Errai"
+        ],
+        "hemisphere": "northern",
+        "alwaysVisible": [
+            "northern_60"
+        ]
+    },
+    "Cet": {
+        "nominative_name": "Cetus",
+        "genitive_name": "Ceti",
+        "english_name": "the Sea Monster",
+        "center_ra": 1.8464774749102335,
+        "center_dec": -6.885535174367792,
+        "bright_stars": [
+            "Diphda",
+            "Menkar"
+        ],
+        "hemisphere": "both",
+        "alwaysVisible": []
+    },
+    "Cha": {
+        "nominative_name": "Chamaeleon",
+        "genitive_name": "Chamaeleontis",
+        "english_name": "the Chameleon",
+        "center_ra": 9.918956050407923,
+        "center_dec": -78.22898161335755,
+        "bright_stars": [
+            null,
+            null
+        ],
+        "hemisphere": "southern",
+        "alwaysVisible": [
+            "southern_60"
+        ]
+    },
+    "Cir": {
+        "nominative_name": "Circinus",
+        "genitive_name": "Circini",
+        "english_name": "the Drawing Compass",
+        "center_ra": 14.973926989667488,
+        "center_dec": -62.43429756434474,
+        "bright_stars": [
+            "Xami",
+            null
+        ],
+        "hemisphere": "southern",
+        "alwaysVisible": [
+            "southern_60"
+        ]
+    },
+    "Col": {
+        "nominative_name": "Columba",
+        "genitive_name": "Columbae",
+        "english_name": "the Dove",
+        "center_ra": 5.8698038350692725,
+        "center_dec": -35.5185238412643,
+        "bright_stars": [
+            "Phact",
+            "Wazn"
+        ],
+        "hemisphere": "southern",
+        "alwaysVisible": []
+    },
+    "Com": {
+        "nominative_name": "Coma Berenices",
+        "genitive_name": "Comae Berenices",
+        "english_name": "the Bernice's Hair",
+        "center_ra": 12.949839297040722,
+        "center_dec": 24.619410900252337,
+        "bright_stars": [
+            null,
+            "Diadem"
+        ],
+        "hemisphere": "both",
+        "alwaysVisible": []
+    },
+    "CrA": {
+        "nominative_name": "Corona Australis",
+        "genitive_name": "Coronae Australis",
+        "english_name": "the Southern Crown",
+        "center_ra": 19.1147005215307,
+        "center_dec": -38.838518003152494,
+        "bright_stars": [
+            null,
+            "Meridiana"
+        ],
+        "hemisphere": "southern",
+        "alwaysVisible": []
+    },
+    "CrB": {
+        "nominative_name": "Corona Borealis",
+        "genitive_name": "Coronae Borealis",
+        "english_name": "the Northern Crown",
+        "center_ra": 15.63913778974921,
+        "center_dec": 27.469653382862703,
+        "bright_stars": [
+            "Alphecca",
+            "Nusakan"
+        ],
+        "hemisphere": "both",
+        "alwaysVisible": []
+    },
+    "Crv": {
+        "nominative_name": "Corvus",
+        "genitive_name": "Corvi",
+        "english_name": "the Crow",
+        "center_ra": 12.364525266791397,
+        "center_dec": -20.342177938985238,
+        "bright_stars": [
+            "Gienah",
+            "Kraz"
+        ],
+        "hemisphere": "both",
+        "alwaysVisible": []
+    },
+    "Crt": {
+        "nominative_name": "Crater",
+        "genitive_name": "Crateris",
+        "english_name": "the Cup",
+        "center_ra": 11.377015202462754,
+        "center_dec": -16.38871745484205,
+        "bright_stars": [
+            null,
+            null
+        ],
+        "hemisphere": "both",
+        "alwaysVisible": []
+    },
+    "Cru": {
+        "nominative_name": "Crux",
+        "genitive_name": "Crucis",
+        "english_name": "the Southern Cross",
+        "center_ra": 12.545713183900709,
+        "center_dec": -60.594273040710725,
+        "bright_stars": [
+            "Acrux",
+            "Mimosa"
+        ],
+        "hemisphere": "southern",
+        "alwaysVisible": [
+            "southern_60"
+        ]
+    },
+    "Cyg": {
+        "nominative_name": "Cygnus",
+        "genitive_name": "Cygni",
+        "english_name": "the Swan",
+        "center_ra": 20.434935655596423,
+        "center_dec": 40.575020039061755,
+        "bright_stars": [
+            "Deneb",
+            "Sadr"
+        ],
+        "hemisphere": "northern",
+        "alwaysVisible": []
+    },
+    "Del": {
+        "nominative_name": "Delphinus",
+        "genitive_name": "Delphini",
+        "english_name": "the Dolphin",
+        "center_ra": 20.65695840255759,
+        "center_dec": 14.58337959436373,
+        "bright_stars": [
+            "Rotanev",
+            "Sualocin"
+        ],
+        "hemisphere": "both",
+        "alwaysVisible": []
+    },
+    "Dor": {
+        "nominative_name": "Dorado",
+        "genitive_name": "Doradus",
+        "english_name": "the Swordfish",
+        "center_ra": 5.066998024228829,
+        "center_dec": -58.52643851201958,
+        "bright_stars": [
+            null,
+            null
+        ],
+        "hemisphere": "southern",
+        "alwaysVisible": []
+    },
+    "Dra": {
+        "nominative_name": "Draco",
+        "genitive_name": "Draconis",
+        "english_name": "the Dragon",
+        "center_ra": 16.89783224645945,
+        "center_dec": 61.495532611292205,
+        "bright_stars": [
+            "Eltanin",
+            "Athebyne"
+        ],
+        "hemisphere": "northern",
+        "alwaysVisible": [
+            "northern_60"
+        ]
+    },
+    "Equ": {
+        "nominative_name": "Equuleus",
+        "genitive_name": "Equulei",
+        "english_name": "the Little Horse",
+        "center_ra": 21.255247788160624,
+        "center_dec": 7.633472649027571,
+        "bright_stars": [
+            "Kitalpha",
+            null
+        ],
+        "hemisphere": "both",
+        "alwaysVisible": []
+    },
+    "Eri": {
+        "nominative_name": "Eridanus",
+        "genitive_name": "Eridani",
+        "english_name": "the River",
+        "center_ra": 2.7460790693240713,
+        "center_dec": -38.5507958039757,
+        "bright_stars": [
+            "Achernar",
+            "Cursa"
+        ],
+        "hemisphere": "southern",
+        "alwaysVisible": []
+    },
+    "For": {
+        "nominative_name": "Fornax",
+        "genitive_name": "Fornacis",
+        "english_name": "the Furnace",
+        "center_ra": 2.845438293844607,
+        "center_dec": -29.998546278980733,
+        "bright_stars": [
+            "Dalim",
+            null
+        ],
+        "hemisphere": "both",
+        "alwaysVisible": []
+    },
+    "Gem": {
+        "nominative_name": "Gemini",
+        "genitive_name": "Geminorum",
+        "english_name": "the Twins",
+        "center_ra": 7.170554489998363,
+        "center_dec": 24.311976266366006,
+        "bright_stars": [
+            "Pollux",
+            "Alhena"
+        ],
+        "hemisphere": "both",
+        "alwaysVisible": []
+    },
+    "Gru": {
+        "nominative_name": "Grus",
+        "genitive_name": "Gruis",
+        "english_name": "the Crane",
+        "center_ra": 22.4430855426776,
+        "center_dec": -45.840871434239645,
+        "bright_stars": [
+            "Alnair",
+            "Tiaki"
+        ],
+        "hemisphere": "southern",
+        "alwaysVisible": []
+    },
+    "Her": {
+        "nominative_name": "Hercules",
+        "genitive_name": "Herculis",
+        "english_name": "the Hercules",
+        "center_ra": 17.130910554423608,
+        "center_dec": 32.13316192108314,
+        "bright_stars": [
+            "Kornephoros",
+            null
+        ],
+        "hemisphere": "northern",
+        "alwaysVisible": []
+    },
+    "Hor": {
+        "nominative_name": "Horologium",
+        "genitive_name": "Horologii",
+        "english_name": "the Clock",
+        "center_ra": 3.503565533767016,
+        "center_dec": -49.8183333168613,
+        "bright_stars": [
+            null,
+            null
+        ],
+        "hemisphere": "southern",
+        "alwaysVisible": []
+    },
+    "Hya": {
+        "nominative_name": "Hydra",
+        "genitive_name": "Hydrae",
+        "english_name": "the Female Water Snake",
+        "center_ra": 10.282871549432278,
+        "center_dec": -10.240174343157301,
+        "bright_stars": [
+            "Alphard",
+            null
+        ],
+        "hemisphere": "both",
+        "alwaysVisible": []
+    },
+    "Hyi": {
+        "nominative_name": "Hydrus",
+        "genitive_name": "Hydri",
+        "english_name": "the Male Water Snake",
+        "center_ra": 1.927576893615446,
+        "center_dec": -70.48837615890469,
+        "bright_stars": [
+            null,
+            null
+        ],
+        "hemisphere": "southern",
+        "alwaysVisible": [
+            "southern_60"
+        ]
+    },
+    "Ind": {
+        "nominative_name": "Indus",
+        "genitive_name": "Indi",
+        "english_name": "the Indian",
+        "center_ra": 21.087265242547332,
+        "center_dec": -52.78240573923037,
+        "bright_stars": [
+            null,
+            null
+        ],
+        "hemisphere": "southern",
+        "alwaysVisible": []
+    },
+    "Lac": {
+        "nominative_name": "Lacerta",
+        "genitive_name": "Lacertae",
+        "english_name": "the Lizard",
+        "center_ra": 22.43108021821903,
+        "center_dec": 45.871751762770515,
+        "bright_stars": [
+            "Stellio",
+            null
+        ],
+        "hemisphere": "northern",
+        "alwaysVisible": []
+    },
+    "Leo": {
+        "nominative_name": "Leo",
+        "genitive_name": "Leonis",
+        "english_name": "the Lion",
+        "center_ra": 10.625138892313734,
+        "center_dec": 15.477020043025272,
+        "bright_stars": [
+            "Regulus",
+            "Denebola"
+        ],
+        "hemisphere": "both",
+        "alwaysVisible": []
+    },
+    "LMi": {
+        "nominative_name": "Leo Minor",
+        "genitive_name": "Leonis Minoris",
+        "english_name": "the Lesser Lion",
+        "center_ra": 10.5756181742493,
+        "center_dec": 35.23234965394869,
+        "bright_stars": [
+            "Praecipua",
+            null
+        ],
+        "hemisphere": "northern",
+        "alwaysVisible": []
+    },
+    "Lep": {
+        "nominative_name": "Lepus",
+        "genitive_name": "Leporis",
+        "english_name": "the Hare",
+        "center_ra": 5.475899235592349,
+        "center_dec": -18.262130573305317,
+        "bright_stars": [
+            "Arneb",
+            "Nihal"
+        ],
+        "hemisphere": "both",
+        "alwaysVisible": []
+    },
+    "Lib": {
+        "nominative_name": "Libra",
+        "genitive_name": "Librae",
+        "english_name": "the Scales",
+        "center_ra": 15.286958005469778,
+        "center_dec": -18.25700197711293,
+        "bright_stars": [
+            "Zubeneschamali",
+            "Zubenelgenubi"
+        ],
+        "hemisphere": "both",
+        "alwaysVisible": []
+    },
+    "Lup": {
+        "nominative_name": "Lupus",
+        "genitive_name": "Lupi",
+        "english_name": "the Wolf",
+        "center_ra": 15.272994493097396,
+        "center_dec": -43.158345890592685,
+        "bright_stars": [
+            "Uridim",
+            null
+        ],
+        "hemisphere": "southern",
+        "alwaysVisible": []
+    },
+    "Lyn": {
+        "nominative_name": "Lynx",
+        "genitive_name": "Lyncis",
+        "english_name": "the Lynx",
+        "center_ra": 8.57434409944323,
+        "center_dec": 42.388312134698786,
+        "bright_stars": [
+            null,
+            null
+        ],
+        "hemisphere": "northern",
+        "alwaysVisible": []
+    },
+    "Lyr": {
+        "nominative_name": "Lyra",
+        "genitive_name": "Lyrae",
+        "english_name": "the Lyre",
+        "center_ra": 18.647721797803804,
+        "center_dec": 38.25898001809503,
+        "bright_stars": [
+            "Vega",
+            "Sulafat"
+        ],
+        "hemisphere": "northern",
+        "alwaysVisible": []
+    },
+    "Men": {
+        "nominative_name": "Mensa",
+        "genitive_name": "Mensae",
+        "english_name": "the Table Mountain",
+        "center_ra": 5.476963635293701,
+        "center_dec": -74.39368057895491,
+        "bright_stars": [
+            "Hoerikwaggo",
+            null
+        ],
+        "hemisphere": "southern",
+        "alwaysVisible": [
+            "southern_60"
+        ]
+    },
+    "Mic": {
+        "nominative_name": "Microscopium",
+        "genitive_name": "Microscopii",
+        "english_name": "the Microscope",
+        "center_ra": 21.130933830478916,
+        "center_dec": -34.64282110427203,
+        "bright_stars": [
+            null,
+            null
+        ],
+        "hemisphere": "southern",
+        "alwaysVisible": []
+    },
+    "Mon": {
+        "nominative_name": "Monoceros",
+        "genitive_name": "Monocerotis",
+        "english_name": "the Unicorn",
+        "center_ra": 6.920605209086159,
+        "center_dec": -2.649091868074455,
+        "bright_stars": [
+            null,
+            null
+        ],
+        "hemisphere": "both",
+        "alwaysVisible": []
+    },
+    "Mus": {
+        "nominative_name": "Musca",
+        "genitive_name": "Muscae",
+        "english_name": "the Fly",
+        "center_ra": 12.560252430278517,
+        "center_dec": -69.13055911356452,
+        "bright_stars": [
+            null,
+            null
+        ],
+        "hemisphere": "southern",
+        "alwaysVisible": [
+            "southern_60"
+        ]
+    },
+    "Nor": {
+        "nominative_name": "Norma",
+        "genitive_name": "Normae",
+        "english_name": "the Carpenter's Square",
+        "center_ra": 16.297837611084297,
+        "center_dec": -49.14808671280848,
+        "bright_stars": [
+            null,
+            null
+        ],
+        "hemisphere": "southern",
+        "alwaysVisible": []
+    },
+    "Oct": {
+        "nominative_name": "Octans",
+        "genitive_name": "Octantis",
+        "english_name": "the Octant",
+        "center_ra": 20.770849579865708,
+        "center_dec": -80.21763984181563,
+        "bright_stars": [
+            null,
+            null
+        ],
+        "hemisphere": "southern",
+        "alwaysVisible": [
+            "southern_60"
+        ]
+    },
+    "Oph": {
+        "nominative_name": "Ophiuchus",
+        "genitive_name": "Ophiuchi",
+        "english_name": "the Serpent Bearer",
+        "center_ra": 17.017374357433425,
+        "center_dec": -0.7304483320553139,
+        "bright_stars": [
+            "Rasalhague",
+            "Sabik"
+        ],
+        "hemisphere": "both",
+        "alwaysVisible": []
+    },
+    "Ori": {
+        "nominative_name": "Orion",
+        "genitive_name": "Orionis",
+        "english_name": "the Hunter",
+        "center_ra": 5.529058004781538,
+        "center_dec": 0.2014117510585027,
+        "bright_stars": [
+            "Rigel",
+            "Betelgeuse"
+        ],
+        "hemisphere": "both",
+        "alwaysVisible": []
+    },
+    "Pav": {
+        "nominative_name": "Pavo",
+        "genitive_name": "Pavonis",
+        "english_name": "the Peacock",
+        "center_ra": 19.865607256170506,
+        "center_dec": -62.404152966169846,
+        "bright_stars": [
+            "Peacock",
+            null
+        ],
+        "hemisphere": "southern",
+        "alwaysVisible": [
+            "southern_60"
+        ]
+    },
+    "Peg": {
+        "nominative_name": "Pegasus",
+        "genitive_name": "Pegasi",
+        "english_name": "the Winged Horse",
+        "center_ra": 23.073537894146707,
+        "center_dec": 20.34166423747401,
+        "bright_stars": [
+            "Alpheratz",
+            "Enif"
+        ],
+        "hemisphere": "both",
+        "alwaysVisible": []
+    },
+    "Per": {
+        "nominative_name": "Perseus",
+        "genitive_name": "Persei",
+        "english_name": "the Hero",
+        "center_ra": 3.465176013009637,
+        "center_dec": 44.33805229606147,
+        "bright_stars": [
+            "Mirfak",
+            "Algol"
+        ],
+        "hemisphere": "northern",
+        "alwaysVisible": []
+    },
+    "Phe": {
+        "nominative_name": "Phoenix",
+        "genitive_name": "Phoenicis",
+        "english_name": "the Phoenix",
+        "center_ra": 0.8414755382153501,
+        "center_dec": -46.1339181597049,
+        "bright_stars": [
+            "Ankaa",
+            null
+        ],
+        "hemisphere": "southern",
+        "alwaysVisible": []
+    },
+    "Pic": {
+        "nominative_name": "Pictor",
+        "genitive_name": "Pictoris",
+        "english_name": "the Painter's Easel",
+        "center_ra": 6.33426199351157,
+        "center_dec": -57.68873156794802,
+        "bright_stars": [
+            null,
+            null
+        ],
+        "hemisphere": "southern",
+        "alwaysVisible": []
+    },
+    "Psc": {
+        "nominative_name": "Pisces",
+        "genitive_name": "Piscium",
+        "english_name": "the Fishes",
+        "center_ra": 0.4806698540953291,
+        "center_dec": 9.820627842770465,
+        "bright_stars": [
+            "Alpherg",
+            null
+        ],
+        "hemisphere": "both",
+        "alwaysVisible": []
+    },
+    "PsA": {
+        "nominative_name": "Piscis Austrinus",
+        "genitive_name": "Piscis Austrini",
+        "english_name": "the Southern Fish",
+        "center_ra": 22.806045993083075,
+        "center_dec": -30.08420302184243,
+        "bright_stars": [
+            "Fomalhaut",
+            null
+        ],
+        "hemisphere": "southern",
+        "alwaysVisible": []
+    },
+    "Pup": {
+        "nominative_name": "Puppis",
+        "genitive_name": "Puppis",
+        "english_name": "the Stern",
+        "center_ra": 7.555576217747818,
+        "center_dec": -37.062617250961374,
+        "bright_stars": [
+            "Naos",
+            null
+        ],
+        "hemisphere": "southern",
+        "alwaysVisible": []
+    },
+    "Pyx": {
+        "nominative_name": "Pyxis",
+        "genitive_name": "Pyxidis",
+        "english_name": "the Mariner Compass",
+        "center_ra": 8.742572282950908,
+        "center_dec": -32.23332359210802,
+        "bright_stars": [
+            null,
+            null
+        ],
+        "hemisphere": "southern",
+        "alwaysVisible": []
+    },
+    "Ret": {
+        "nominative_name": "Reticulum",
+        "genitive_name": "Reticuli",
+        "english_name": "the Reticle",
+        "center_ra": 4.065255114583865,
+        "center_dec": -62.422092497474004,
+        "bright_stars": [
+            "Rhombus",
+            null
+        ],
+        "hemisphere": "southern",
+        "alwaysVisible": [
+            "southern_60"
+        ]
+    },
+    "Sge": {
+        "nominative_name": "Sagitta",
+        "genitive_name": "Sagittae",
+        "english_name": "the Arrow",
+        "center_ra": 19.82203348784637,
+        "center_dec": 18.627550629779513,
+        "bright_stars": [
+            null,
+            null
+        ],
+        "hemisphere": "both",
+        "alwaysVisible": []
+    },
+    "Sgr": {
+        "nominative_name": "Sagittarius",
+        "genitive_name": "Sagittarii",
+        "english_name": "the Archer",
+        "center_ra": 18.828381450687637,
+        "center_dec": -29.237410080137362,
+        "bright_stars": [
+            "Kaus Australis",
+            "Nunki"
+        ],
+        "hemisphere": "both",
+        "alwaysVisible": []
+    },
+    "Sco": {
+        "nominative_name": "Scorpius",
+        "genitive_name": "Scorpii",
+        "english_name": "the Scorpion",
+        "center_ra": 16.951093867254336,
+        "center_dec": -33.1613086478992,
+        "bright_stars": [
+            "Antares",
+            "Shaula"
+        ],
+        "hemisphere": "southern",
+        "alwaysVisible": []
+    },
+    "Scl": {
+        "nominative_name": "Sculptor",
+        "genitive_name": "Sculptoris",
+        "english_name": "the Sculptor",
+        "center_ra": 23.940906994844116,
+        "center_dec": -32.07796555470754,
+        "bright_stars": [
+            null,
+            null
+        ],
+        "hemisphere": "southern",
+        "alwaysVisible": []
+    },
+    "Sct": {
+        "nominative_name": "Scutum",
+        "genitive_name": "Scuti",
+        "english_name": "the Shield",
+        "center_ra": 18.58810441499398,
+        "center_dec": -8.549634802847216,
+        "bright_stars": [
+            null,
+            null
+        ],
+        "hemisphere": "both",
+        "alwaysVisible": []
+    },
+    "Ser": {
+        "nominative_name": "Serpens",
+        "genitive_name": "Serpentis",
+        "english_name": "the Serpent",
+        "center_ra": 16.49337990613643,
+        "center_dec": 2.6827847413067447,
+        "bright_stars": [
+            "Unukalhai",
+            null
+        ],
+        "hemisphere": "both",
+        "alwaysVisible": []
+    },
+    "Sex": {
+        "nominative_name": "Sextans",
+        "genitive_name": "Sextantis",
+        "english_name": "the Sextant",
+        "center_ra": 10.162406750699732,
+        "center_dec": -2.5254193630558386,
+        "bright_stars": [
+            null,
+            null
+        ],
+        "hemisphere": "both",
+        "alwaysVisible": []
+    },
+    "Tau": {
+        "nominative_name": "Taurus",
+        "genitive_name": "Tauri",
+        "english_name": "the Bull",
+        "center_ra": 4.775266862651082,
+        "center_dec": 19.35773884835623,
+        "bright_stars": [
+            "Aldebaran",
+            "Elnath"
+        ],
+        "hemisphere": "both",
+        "alwaysVisible": []
+    },
+    "Tel": {
+        "nominative_name": "Telescopium",
+        "genitive_name": "Telescopii",
+        "english_name": "the Telescope",
+        "center_ra": 18.406682395127305,
+        "center_dec": -46.869279422882485,
+        "bright_stars": [
+            null,
+            null
+        ],
+        "hemisphere": "southern",
+        "alwaysVisible": []
+    },
+    "Tri": {
+        "nominative_name": "Triangulum",
+        "genitive_name": "Trianguli",
+        "english_name": "the Triangle",
+        "center_ra": 2.0931685600313332,
+        "center_dec": 32.99598714098204,
+        "bright_stars": [
+            null,
+            "Mothallah"
+        ],
+        "hemisphere": "northern",
+        "alwaysVisible": []
+    },
+    "TrA": {
+        "nominative_name": "Triangulum Australe",
+        "genitive_name": "Trianguli Australis",
+        "english_name": "the Southern Triangle",
+        "center_ra": 16.22505247027568,
+        "center_dec": -67.55832372173143,
+        "bright_stars": [
+            "Atria",
+            null
+        ],
+        "hemisphere": "southern",
+        "alwaysVisible": [
+            "southern_60"
+        ]
+    },
+    "Tuc": {
+        "nominative_name": "Tucana",
+        "genitive_name": "Tucanae",
+        "english_name": "the Toucan",
+        "center_ra": 23.11763994501085,
+        "center_dec": -61.7615631938986,
+        "bright_stars": [
+            "Lang-Exster",
+            null
+        ],
+        "hemisphere": "southern",
+        "alwaysVisible": [
+            "southern_60"
+        ]
+    },
+    "UMa": {
+        "nominative_name": "Ursa Major",
+        "genitive_name": "Ursae Majoris",
+        "english_name": "the Great Bear",
+        "center_ra": 11.604412700990329,
+        "center_dec": 52.84661800099082,
+        "bright_stars": [
+            "Alioth",
+            "Dubhe"
+        ],
+        "hemisphere": "northern",
+        "alwaysVisible": []
+    },
+    "UMi": {
+        "nominative_name": "Ursa Minor",
+        "genitive_name": "Ursae Minoris",
+        "english_name": "the Little Bear",
+        "center_ra": 16.535383847431433,
+        "center_dec": 80.45320995323267,
+        "bright_stars": [
+            "Polaris",
+            "Kochab"
+        ],
+        "hemisphere": "northern",
+        "alwaysVisible": [
+            "northern_60"
+        ]
+    },
+    "Vel": {
+        "nominative_name": "Vela",
+        "genitive_name": "Velorum",
+        "english_name": "the Sails",
+        "center_ra": 9.426184411907778,
+        "center_dec": -49.45539002951555,
+        "bright_stars": [
+            "Alsephina",
+            "Suhail"
+        ],
+        "hemisphere": "southern",
+        "alwaysVisible": []
+    },
+    "Vir": {
+        "nominative_name": "Virgo",
+        "genitive_name": "Virginis",
+        "english_name": "the Maiden",
+        "center_ra": 13.333817856390445,
+        "center_dec": -8.274169764117772,
+        "bright_stars": [
+            "Spica",
+            "Heze"
+        ],
+        "hemisphere": "both",
+        "alwaysVisible": []
+    },
+    "Vol": {
+        "nominative_name": "Volans",
+        "genitive_name": "Volantis",
+        "english_name": "the Flying Fish",
+        "center_ra": 7.928390106603511,
+        "center_dec": -68.71173542211775,
+        "bright_stars": [
+            null,
+            null
+        ],
+        "hemisphere": "southern",
+        "alwaysVisible": [
+            "southern_60"
+        ]
+    },
+    "Vul": {
+        "nominative_name": "Vulpecula",
+        "genitive_name": "Vulpeculae",
+        "english_name": "the Fox",
+        "center_ra": 19.558548164582152,
+        "center_dec": 23.54105316247561,
+        "bright_stars": [
+            "Anser",
+            null
+        ],
+        "hemisphere": "both",
+        "alwaysVisible": []
+    }
+}

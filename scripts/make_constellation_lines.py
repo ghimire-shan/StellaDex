@@ -42,13 +42,10 @@ def create_bsc_lookup(hyg_data):
             bsc_lookup[int(star['hr'])] = {
                 'ra': star['ra'],
                 'dec': star['dec'],
-                # 'z': star['z'],
-                # 'name': star.get('proper', 'unknown'),
-                # 'con': star.get('con', 'unknown'),
-                # 'ra': star['ra'],
-                # 'dec': star['dec'],
-                # 'rarad': star['rarad'],
-                # 'decrad': star['decrad']
+                'name': star.get('proper', 'unknown'),
+                'con': star.get('con', 'unknown'),
+                'mag': star.get('mag')
+                
                 # Can add more details here if needed and reconstruct the data
             }
     return bsc_lookup
@@ -75,19 +72,18 @@ def process_constellation_lines(constellation_data, bsc_lookup):
                             'ra': star_from['ra'], 
                             'dec': star_from['dec'], 
                             # Add more if needed for testing
-                            # 'name': star_from.get('name', 'unknown'),
-                            # 'con': star_from['con'],
-                            # 'rarad': star_from['rarad'],
-                            # 'decrad': star_from['decrad'],
+                            'name': star_from.get('name', 'unknown'),
+                            'con': star_from['con'],
+                            'mag': star_from['mag'],
                             },
                         'to': {
                             'ra': star_to['ra'], 
                             'dec': star_to['dec'], 
                             # Add more if needed for testing
-                            # 'name': star_to.get('name', 'unknown'),
-                            # 'con': star_to['con'],
-                            # 'rarad': star_to['rarad'],
-                            # 'decrad': star_to['decrad'],
+                            'name': star_to.get('name', 'unknown'),
+                            'con': star_to['con'],
+                            'mag': star_to['mag'],
+                            
                             },
                     })
             if segment_lines:
@@ -100,7 +96,7 @@ def process_constellation_lines(constellation_data, bsc_lookup):
 if __name__ == "__main__":
     CONSTELLATION_DAT_PATH = "./data/ConstellationLines.dat"
     HYG_DATA_PATH = './assets/hyg_visible.json'
-    CONSTELLATION_LINES_SAVE_PATH = './assets/constellation_lines.json'
+    CONSTELLATION_LINES_SAVE_PATH = './data/constellation_lines_with_mag.json'
 
     constellation_lines = parse_constellation_lines(CONSTELLATION_DAT_PATH)
     hyg_data = load_hyg_data(HYG_DATA_PATH)

@@ -23,19 +23,21 @@ const HorizontalPlane: React.FC<HorizontalPlaneProps> = ({
     const planeRotation: [number, number, number] = [-Math.PI/ 2, 0, 0];
     
     // Make the plane 5x bigger than the celestial sphere
-    const planeSize = radius * 5;
+    const planeSize = radius * 0.95;
     
     return(
         <mesh 
             rotation={planeRotation}
-            position={[0,-5,0]}
+            position={[0,-2,0]}
+            renderOrder={1}
         >
-            <planeGeometry args={[planeSize, planeSize]} />
+            <circleGeometry args={[planeSize, 64]} />
             <meshBasicMaterial
                 color={color}
                 transparent={true}
                 opacity={opacity}
                 side={THREE.DoubleSide}
+                depthWrite={false}
             />
         </mesh>
     )
