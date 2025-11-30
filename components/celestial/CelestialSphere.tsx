@@ -74,21 +74,6 @@ const CelestialSphere: React.FC<CelestialSphereProps> = ({
                 radius={CELESTIAL_SPHERE_RADIUS} 
                 color= {CONSTELLATION_LINES_COLOR}
             />
-                    {/* Adding known some known stars as cube on the surface
-                        Adding Polaris, Betelgeuse, Sirius
-                    */}
-                    <mesh position={raDecToCartesian(2.52975, 89.264109, CELESTIAL_SPHERE_RADIUS)}>
-                        <boxGeometry args={[30, 30, 30]} />
-                                <meshBasicMaterial color={"red"} />
-                    </mesh>
-                    <mesh position={raDecToCartesian(5.919529, 7.407063, CELESTIAL_SPHERE_RADIUS)}>
-                        <boxGeometry args={[30, 30, 30]} />
-                            <meshBasicMaterial color={"cyan"} />
-                    </mesh>
-                    <mesh position={raDecToCartesian(6.752481,  -16.716116, CELESTIAL_SPHERE_RADIUS)}>
-                        <boxGeometry args={[30, 30, 30]} />
-                            <meshBasicMaterial color={"green"} />
-                    </mesh>
         </group>
     );
 };

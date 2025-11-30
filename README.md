@@ -48,12 +48,15 @@ See the [open issues](https://github.com/ghimire-shan/StellaDex/issues) for a fu
 ## License
 
 ## Acknowledgments
-* [HYG dataset](https://www.astronexus.com/projects/hyg)
+* [aavso for constellation name](https://www.aavso.org/constellation-names-and-abbreviations)
+* [IAU](https://www.iau.org/Iau/Iau/Science/What-we-do/The-Constellations.aspx)
 * [Expo Documentation](https://docs.expo.dev/)
+* [HYG dataset](https://www.astronexus.com/projects/hyg)
+* [MarcvdSluys ConstellationLines](https://github.com/MarcvdSluys/ConstellationLines)
+* [md-badges](https://github.com/inttter/md-badges)
 * [React-three-fiber](https://r3f.docs.pmnd.rs/getting-started/introduction)
 * [three.js](https://threejs.org/)
-* [md-badges](https://github.com/inttter/md-badges)
-* [MarcvdSluys ConstellationLines](https://github.com/MarcvdSluys/ConstellationLines)
+
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
 
