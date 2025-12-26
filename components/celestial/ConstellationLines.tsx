@@ -120,7 +120,7 @@ const ConstellationLines: React.FC<ConstellationLineProps> = ({
             <lineBasicMaterial
                 color={color}
                 transparent={true}
-                opacity={0.6} />
+                opacity={0.4} />
         </lineSegments>
     );
 };

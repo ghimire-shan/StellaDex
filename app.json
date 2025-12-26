@@ -2,6 +2,7 @@
   "expo": {
     "name": "StellaDex",
     "slug": "StellaDex",
+    "scheme": "stelladex",
     "version": "1.0.0",
     "orientation": "portrait",
     "icon": "./assets/icon.png",
@@ -16,7 +17,7 @@
       [
         "expo-location",
         {
-          "locationAlwaysAndWhenInUsePermission": "Allow $(PRODUCT_NAME) to use your location"
+          "locationAlwaysAndWhenInUsePermission": "Allow StellaDex to use your location to show the stars above you."
         }
       ],
       "expo-router"
@@ -36,10 +37,9 @@
       "predictiveBackGestureEnabled": false,
       "package": "com.anonymous.StellaDex",
       "permissions": [
-        "ACCESS_COARSE_LOCATION",
-        "ACCESS_FINE_LOCATION",
         "android.permission.ACCESS_COARSE_LOCATION",
-        "android.permission.ACCESS_FINE_LOCATION"
+        "android.permission.ACCESS_FINE_LOCATION",
+        "android.permission.INTERNET"
       ]
     },
     "web": {
@@ -50,6 +50,12 @@
       "eas": {
         "projectId": "1fdffa16-c86a-43ec-8e84-eb8a3d68ee6d"
       }
+    },
+    "runtimeVersion": {
+      "policy": "appVersion"
+    },
+    "updates": {
+      "url": "https://u.expo.dev/1fdffa16-c86a-43ec-8e84-eb8a3d68ee6d"
     }
   }
 }
